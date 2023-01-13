@@ -25,8 +25,8 @@ app.post('/insert', async(req, res) =>{
 
 app.get('/:name', async(req, res)=>{
     try{
-        const res = await Author.find({name:req.params.name});
-        res.send(res);
+        const result = await Author.find({name:req.params.name});
+        res.send(result);
     }
     catch(e){
         return e;
@@ -45,8 +45,8 @@ app.delete('/delete/:id', async(req, res)=>{
 
 app.get('/:id', async(req, res)=>{
     try{
-        const res = await Author.find({name:req.params.id});
-        res.send(res);
+        const result = await Author.find({name:req.params.id});
+        res.send(result);
     }
     catch(e){
         return e;
