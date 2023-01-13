@@ -25,7 +25,7 @@ app.post('/insert', async(req, res) =>{
 
 app.get('/:name', async(req, res)=>{
     try{
-        const result = await Book.find({name:req.params.name});
+        const result = await Book.find({title:req.params.name});
         res.send(result);
     }
     catch(e){
@@ -35,7 +35,7 @@ app.get('/:name', async(req, res)=>{
 
 app.get('/:id', async(req, res)=>{
     try{
-        const result = await Book.find({name:req.params.id});
+        const result = await Book.find(req.params.id);
         res.send(result);
     }
     catch(e){
